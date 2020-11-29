@@ -1,87 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ADMIN </title>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css.css">
-    <link rel="stylesheet" href="styleS.css">
-
-    <script src="js/jquery-3.1.1.js"></script>
-       <script src="js/bootstrap.js"></script>
-       <script src="js/bootstrap-hover-dropdown.min.js"></script>
-       <script src="js/admin.js"></script>
-       <script src="https://use.fontawesome.com/10a964325b.js"></script><link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <title></title>
+    <link rel="stylesheet" href="style2.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/35da95f355.js" crossorigin="anonymous"></script>
- <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/35da95f355.js" crossorigin="anonymous"></script>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  </head>
+  <body>
+  <header>
+    <div class="container bg-info p-5 ">
+      <nav class="navbar">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">Home <span></span></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!---->
+  <main>
+  <div class="container my-5">
+         <div class="card-body text-center">
+      <h4 class="card-title">ADMIN DASHBORD</h4>
+      <p class="card-text">Qui l'admin ha la possibilita di creare, moddificare e eliminare i post</p>
+    </div>
+      <div class="card">
+          <button id="add__new__art" type="button" class="btn btn-success position-absolute" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i> Aggiungi Post</button>
+          <table class="table table-hover" style="white">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">titolo</th>
+                  <th scope="col">contenuto</th>
+                  <th scope="col">autore </th>
+                  <th scope="col">data</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>beauty trcks</td>
+                  <td>lorem ipsummmmmmmmm</td>
+                    <td>laura</td>
+                      <td>29/11/2020</td>
+                  <td>
+                      <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
+                      <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
+                  </td>
+                  <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>beauty trcks</td>
+                  <td>lorem ipsummmmmmmmm</td>
+                    <td>laura</td>
+                      <td>29/11/2020</td>
+                  <td>
+                      <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
+                      <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
+                  </td>
+                  <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>beauty trcks</td>
+                    <td>lorem ipsummmmmmmmm</td>
+                      <td>laura</td>
+                        <td>29/11/2020</td>
+                    <td>
+                        <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
+                        <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
+                    </td>
+                    <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
+                  </tr>
+              </tbody>
+            </table>
+      </div>
 
-
-</head>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <ul class="nav navbar-nav ">
-                        <a class="navbar-brand" rel="home" href="#" title="The blond caramel">
-                            <img style="max-width:200px; margin-top: -70px;" src="logo.png">
-
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+              <div class="card-body text-center">
+                <h4 class="card-title">Aggiunggi Post</h4>
+              </div>
+                <div class=" card col-8 offset-2 my-2 p-3">
+              <form>
+                <div class="input-group">
+                  <label for="listname">Titolo</label>
+                  <input type="text" class="form-control" name="listname" id="listname" placeholder="Inserisci il titolo">
                 </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <div class="dropdown pull-right">
-             <button class="notification-btn dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
-<i class="fa fa-bell-o" aria-hidden="true"></i><span class="badge">5</span>
-</button>
-<div class="navbar-header" style="display: inline-block;">
-                    <button id="menu_icon"><i class="fa fa-bars" aria-hidden="true"></i></button>
-
+                <div class="input-group">
+                  <label for="datepicker">Contenuto</label>
+                  <input  type="text" class="form-control" name="datepicker" id="datepicker" placeholder="Inserisci il contenuto">
                 </div>
+                <div class="input-group">
+                                        <label for="datepicker">Autore</label>
+                    <div class="input-group">
 
+                      <input type="text" class="form-control" placeholder="Add an item" placeholder="Inserisci l'autore">
+                    </div>
+                    <div class="input-group">
+                                            <label for="datepicker">Data</label>
+                        <div class="input-group">
 
-            </div>
-        </nav>
-</header>
-<body>
-  <aside class="hit_sidebar open_sidbar sidebar-slide-push">
-             <ul>
-                 <li><a href="#">
-             <span class="nav-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
-             <span class="remove_text">Admin</span></a></li>
-                 <li><a href="#" class="activ">
-             <span class="nav-icon"><i class="fa fa-tachometer" aria-hidden="true"></i></span>
-             <span class="remove_text">Dashboard</span></a></li>
-                 <li><a href="#">
-             <span class="nav-icon"><i class="fa fa-inbox" aria-hidden="true"></i></span>
-             <span class="remove_text"> Inbox</span></a></li>
-                 <li><a href="#">
-             <span class="nav-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></span>
-             <span class="remove_text"> Notification</span></a></li>
-                 <li><a href="#">
-             <span class="nav-icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
-             <span class="remove_text"> Spam</span></a></li>
-                 <li><a href="#">
-             <span class="nav-icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
-             <span class="remove_text">Seting</span> </a></li>
-                 <li><a href="#">
-             <span class="nav-icon"><i class="fa fa-power-off" aria-hidden="true"></i></span>
-             <span class="remove_text">Logout</span> </a></li>
-             </ul>
-         </aside>
-         <section id="content_body">
-         <div class="container">
+                          <input type="text" class="form-control" placeholder="Add an item" placeholder="Inserisci la data">
+                        </div>
+                  </div>
+               <div class="form-group text-center">
+                 <button type="submit" class="btn btn-block btn-primary">Aggiungi</button>
+              </div>
+            </form>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </main>
+    <!---->
 
-        </section>
+    <!---->
+    <footer >
+      <div class="container bg-info p-5">
 
-
-</body>
+    	</div>
+    </footer>
+  </body>
+</html>
