@@ -3,7 +3,7 @@ session_start();
 // Change this to your connection info.
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
-$DATABASE_PASS = '';
+$DATABASE_PASS = '@password123';
 $DATABASE_NAME = 'phplogin';
 // Try and connect using the info above.
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
@@ -34,7 +34,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
   		$_SESSION['loggedin'] = TRUE;
   		$_SESSION['name'] = $_POST['username'];
   		$_SESSION['id'] = $id;
-  	header('Location: home.php');
+  	header('Location: index_admin.php');
   	} else {
   		// Incorrect password
   		echo 'Incorrect username and/or password!';
