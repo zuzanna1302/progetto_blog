@@ -1,596 +1,394 @@
-            html,
-        body,
-        .container-fluid {
-            height: 100%;
-        }
-
-        header .container-fluid {
-            background-color: white;
-            height: 80px;
-            border: #bbb;
-        }
-
-        header ul li ul {
-            position: absolute;
-            top: 66%;
-            right: 0%;
-            width: 180px;
-            display: none;
-        }
-
-        header ul {
-            position: relative;
-            float: right;
-        }
-
-        header ul li {
-            float: left;
-            position: relative;
-        }
-
-        .navbar-custom .navbar-brand,
-        .navbar-custom .navbar-text {
-            color: rgb(228, 226, 226);
-        }
-
-        header * {
-            color: black;
-        }
-
-        @font-face {
-          font-family: 'Impact';
-        }
-
-        html, body, #wrap {height: 100%;}
-
-        body > #wrap {height: auto; min-height: 100%;}
-
-        #main {padding-bottom: 150px;}  /* la stessa altezza del footer */
-
-        #footer {position: relative;
-            margin-top: -150px; /* valore negativo dell'altezza del footer */
-            height: 150px;
-            clear:both;}
-
-
-
-
-        svg {
-          display: block;
-          overflow: visible;
-        }
-
-        .slider-container {
-          position:relative;
-          height: 100%;
-          -webkit-user-select: none;
-             -moz-user-select: none;
-              -ms-user-select: none;
-                  user-select: none;
-          cursor: all-scroll;
-        }
-
-        .slider-control {
-          z-index: 2;
-          position: absolute;
-          top: 0;
-          width: 12%;
-          height: 100%;
-          transition: opacity 0.3s;
-          will-change: opacity;
-          opacity: 0;
-        }
-        .slider-control.inactive:hover {
-          cursor: auto;
-        }
-        .slider-control:not(.inactive):hover {
-          opacity: 1;
-          cursor: pointer;
-        }
-        .slider-control.left {
-          left: 0;
-          background: linear-gradient(to right, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0) 100%);
-        }
-        .slider-control.right {
-          right: 0;
-          background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.18) 100%);
-        }
-
-        .slider-pagi {
-          position: absolute;
-          z-index: 3;
-          left: 50%;
-          bottom: 2rem;
-          -webkit-transform: translateX(-50%);
-                  transform: translateX(-50%);
-          font-size: 0;
-          list-style-type: none;
-        }
-        .slider-pagi__elem {
-          position: relative;
-          display: inline-block;
-          vertical-align: top;
-          width: 2rem;
-          height: 2rem;
-          margin: 0 0.5rem;
-          border-radius: 50%;
-          border: 2px solid #fff;
-          cursor: pointer;
-        }
-        .slider-pagi__elem:before {
-          content: "";
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 1.2rem;
-          height: 1.2rem;
-          background: #fff;
-          border-radius: 50%;
-          transition: -webkit-transform 0.3s;
-          transition: transform 0.3s;
-          transition: transform 0.3s, -webkit-transform 0.3s;
-          -webkit-transform: translate(-50%, -50%) scale(0);
-                  transform: translate(-50%, -50%) scale(0);
-        }
-        .slider-pagi__elem.active:before, .slider-pagi__elem:hover:before {
-          -webkit-transform: translate(-50%, -50%) scale(1);
-                  transform: translate(-50%, -50%) scale(1);
-        }
-
-        .slider {
-          z-index: 1;
-          position: relative;
-          height: 100%;
-        }
-        .slider.animating {
-          transition: -webkit-transform 0.5s;
-          transition: transform 0.5s;
-          transition: transform 0.5s, -webkit-transform 0.5s;
-          will-change: transform;
-        }
-        .slider.animating .slide__bg {
-          transition: -webkit-transform 0.5s;
-          transition: transform 0.5s;
-          transition: transform 0.5s, -webkit-transform 0.5s;
-          will-change: transform;
-        }
-
-        .slide {
-          position: absolute;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-        }
-        .slide.active .slide__overlay,
-        .slide.active .slide__text {
-          opacity: 1;
-          -webkit-transform: translateX(0);
-                  transform: translateX(0);
-        }
-        .slide__bg {
-          position: absolute;
-          top: 0;
-          left: -50%;
-          width: 100%;
-          height: 100%;
-          background-size: cover;
-          will-change: transform;
-        }
-        .slide:nth-child(1) {
-          left: 0;
-        }
-        .slide:nth-child(1) .slide__bg {
-          left: 0;
-          background-image: url("food.jpg");
-        }
-        .slide:nth-child(1) .slide__overlay-path {
-          fill: #e99c7e;
-        }
-        @media (max-width: 991px) {
-          .slide:nth-child(1) .slide__text {
-            background-color: rgba(233, 156, 126, 0.8);
-          }
-        }
-        .slide:nth-child(2) {
-          left: 100%;
-        }
-        .slide:nth-child(2) .slide__bg {
-          left: -50%;
-          background-image: url("fashion.jpg");
-        }
-        .slide:nth-child(2) .slide__overlay-path {
-          fill: #e1ccae;
-        }
-        @media (max-width: 991px) {
-          .slide:nth-child(2) .slide__text {
-            background-color: rgba(225, 204, 174, 0.8);
-          }
-        }
-        .slide:nth-child(3) {
-          left: 200%;
-        }
-        .slide:nth-child(3) .slide__bg {
-          left: -100%;
-          background-image: url("beauty.jpg");
-        }
-        .slide:nth-child(3) .slide__overlay-path {
-          fill: #adc5cd;
-        }
-        @media (max-width: 991px) {
-          .slide:nth-child(3) .slide__text {
-            background-color: rgba(173, 197, 205, 0.8);
-          }
-        }
-        .slide:nth-child(4) {
-          left: 300%;
-        }
-        .slide:nth-child(4) .slide__bg {
-          left: -150%;
-          background-image: url("gossip.jpg");
-        }
-        .slide:nth-child(4) .slide__overlay-path {
-          fill: #cbc6c3;
-        }
-        @media (max-width: 991px) {
-          .slide:nth-child(4) .slide__text {
-            background-color: rgba(203, 198, 195, 0.8);
-          }
-        }
-        .slide__content {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-        .slide__overlay {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 100%;
-          min-height: 810px;
-          transition: opacity 0.2s 0.5s, -webkit-transform 0.5s 0.5s;
-          transition: transform 0.5s 0.5s, opacity 0.2s 0.5s;
-          transition: transform 0.5s 0.5s, opacity 0.2s 0.5s, -webkit-transform 0.5s 0.5s;
-          will-change: transform, opacity;
-          -webkit-transform: translate3d(-20%, 0, 0);
-                  transform: translate3d(-20%, 0, 0);
-          opacity: 0;
-        }
-        @media (max-width: 991px) {
-          .slide__overlay {
-            display: none;
-          }
-        }
-        .slide__overlay path {
-          opacity: 0.8;
-        }
-        .slide__text {
-          position: absolute;
-          width: 25%;
-          bottom: 15%;
-          left: 12%;
-          color: #fff;
-          transition: opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
-          transition: transform 0.5s 0.8s, opacity 0.5s 0.8s;
-          transition: transform 0.5s 0.8s, opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
-          will-change: transform, opacity;
-          -webkit-transform: translateY(-50%);
-                  transform: translateY(-50%);
-          opacity: 0;
-        }
-        @media (max-width: 991px) {
-          .slide__text {
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 20rem;
-            text-align: center;
-            -webkit-transform: translateY(50%);
-                    transform: translateY(50%);
-            transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
-            transition: transform 0.5s 0.5s, opacity 0.5s 0.5s;
-            transition: transform 0.5s 0.5s, opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
-            padding: 0 1rem;
-          }
-        }
-        .slide__text-heading {
-          font-family: "Polar", Helvetica, Arial, sans-serif;
-          font-size: 5rem;
-          margin-bottom: 2rem;
-        }
-        @media (max-width: 991px) {
-          .slide__text-heading {
-            line-height: 20rem;
-            font-size: 3.5rem;
-          }
-        }
-        .slide__text-desc {
-          font-family: "Open Sans", Helvetica, Arial, sans-serif;
-          font-size: 1.8rem;
-          margin-bottom: 1.5rem;
-        }
-        @media (max-width: 991px) {
-          .slide__text-desc {
-            display: none;
-          }
-        }
-        .slide__text-link {
-          z-index: 5;
-          display: inline-block;
-          position: relative;
-          padding: 0.5rem;
-          cursor: pointer;
-          font-family: "Open Sans", Helvetica, Arial, sans-serif;
-          font-size: 2.3rem;
-          -webkit-perspective: 1000px;
-                  perspective: 1000px;
-        }
-        @media (max-width: 991px) {
-          .slide__text-link {
-            display: none;
-          }
-        }
-        .slide__text-link:before {
-          z-index: -1;
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: #000;
-          -webkit-transform-origin: 50% 100%;
-                  transform-origin: 50% 100%;
-          -webkit-transform: rotateX(-85deg);
-                  transform: rotateX(-85deg);
-          transition: -webkit-transform 0.3s;
-          transition: transform 0.3s;
-          transition: transform 0.3s, -webkit-transform 0.3s;
-          will-change: transform;
-        }
-        .slide__text-link:hover:before {
-          -webkit-transform: rotateX(0);
-                  transform: rotateX(0);
-        }
-
-
-
-        .site-footer {
-            background-color: rgb(161, 214, 238);
-            padding: 30px 0 15px;
-            font-size: 15px;
-            line-height: 24px;
-            color: #737373;
-        }
-
-        .site-footer hr {
-            border-top-color: #bbb;
-            opacity: 0.5
-        }
-
-        .site-footer hr.small {
-            margin: 20px 0
-        }
-
-        .site-footer h6 {
-            color: black;
-            font-size: 20px;
-            text-transform: uppercase;
-            margin-top: 5px;
-            letter-spacing: 2px
-        }
-
-        .site-footer a {
-            color: black;
-        }
-
-        .site-footer a:hover {
-            color: #3366cc;
-            text-decoration: none;
-        }
-
-        .footer-links {
-            padding-left: 0;
-            list-style: none
-        }
-
-        .footer-links li {
-            display: block
-        }
-
-        .footer-links a {
-            color: #737373
-        }
-
-        .footer-links a:active,
-        .footer-links a:focus,
-        .footer-links a:hover {
-            color: #3366cc;
-            text-decoration: none;
-        }
-
-        .footer-links.inline li {
-            display: inline-block
-        }
-
-        .site-footer .social-icons {
-            text-align: right
-        }
-
-        .site-footer .social-icons a {
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            margin-left: 6px;
-            margin-right: 0;
-            border-radius: 100%;
-            background-color: #33353d
-        }
-
-        .copyright-text {
-            margin: 0
-        }
-
-        @media (max-width:991px) {
-            .site-footer [class^=col-] {
-                margin-bottom: 30px
-            }
-        }
-
-        @media (max-width:767px) {
-            .site-footer {
-                padding-bottom: 0
-            }
-            .site-footer .copyright-text,
-            .site-footer .social-icons {
-                text-align: center
-            }
-        }
-
-        .social-icons {
-            padding-left: 0;
-            margin-bottom: 0;
-            list-style: none
-        }
-
-        .social-icons li {
-            display: inline-block;
-            margin-bottom: 4px
-        }
-
-        .social-icons li.title {
-            margin-right: 15px;
-            text-transform: uppercase;
-            color: #96a2b2;
-            font-weight: 700;
-            font-size: 13px
-        }
-
-        .social-icons a {
-            background-color: #eceeef;
-            color: #818a91;
-            font-size: 16px;
-            display: inline-block;
-            line-height: 44px;
-            width: 44px;
-            height: 44px;
-            text-align: center;
-            margin-right: 8px;
-            border-radius: 100%;
-            -webkit-transition: all .2s linear;
-            -o-transition: all .2s linear;
-            transition: all .2s linear
-        }
-
-        .social-icons a:active,
-        .social-icons a:focus,
-        .social-icons a:hover {
-            color: #fff;
-            background-color: #29aafe
-        }
-
-        .social-icons.size-sm a {
-            line-height: 34px;
-            height: 34px;
-            width: 34px;
-            font-size: 14px
-        }
-
-        .social-icons a.facebook:hover {
-            background-color: #3b5998
-        }
-
-        .social-icons a.twitter:hover {
-            background-color: #00aced
-        }
-
-        .social-icons a.linkedin:hover {
-            background-color: #007bb6
-        }
-
-        .social-icons a.dribbble:hover {
-            background-color: #ea4c89
-        }
-
-        @media (max-width:767px) {
-            .social-icons li.title {
-                display: block;
-                margin-right: 0;
-                font-weight: 600
-            }
-            * {
-                box-sizing: border-box
-            }
-            @import url('https://fonts.googleapis.com/css?family=Numans');
-            html,
-            body {
-                background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
-                background-size: cover;
-                background-repeat: no-repeat;
-                height: 100%;
-                font-family: 'Numans', sans-serif;
-            }
-            .container {
-                height: 100%;
-                align-content: center;
-            }
-            .card {
-                height: 370px;
-                margin-top: auto;
-                margin-bottom: auto;
-                width: 400px;
-                background-color: rgba(0, 0, 0, 0.5) !important;
-            }
-            .social_icon span {
-                font-size: 60px;
-                margin-left: 10px;
-                color: #FFC312;
-            }
-            .social_icon span:hover {
-                color: white;
-                cursor: pointer;
-            }
-            .card-header h3 {
-                color: white;
-            }
-            .social_icon {
-                position: absolute;
-                right: 20px;
-                top: -45px;
-            }
-            .input-group-prepend span {
-                width: 50px;
-                background-color: #FFC312;
-                color: black;
-                border: 0 !important;
-            }
-            input:focus {
-                outline: 0 0 0 0 !important;
-                box-shadow: 0 0 0 0 !important;
-            }
-            .remember {
-                color: white;
-            }
-            .remember input {
-                width: 20px;
-                height: 20px;
-                margin-left: 15px;
-                margin-right: 5px;
-            }
-            .login_btn {
-                color: black;
-                background-color: #FFC312;
-                width: 100px;
-            }
-            .login_btn:hover {
-                color: black;
-                background-color: white;
-            }
-            .links {
-                color: white;
-            }
-            .links a {
-                margin-left: 4px;
-            }
+                                                                    html,
+                                                                body,
+                                                                .container-fluid {
+                                                                    height: 100%;
+                                                                }
+                                                                
+                                                                html,
+                                                                body {
+                                                                    background-image: url(sfondo5.png);
+                                                                }
+                                                                
+                                                                header .container-fluid {
+                                                                    background-color: white;
+                                                                    height: 80px;
+                                                                    border: #bbb;
+                                                                }
+                                                                
+                                                                header ul li ul {
+                                                                    position: absolute;
+                                                                    top: 66%;
+                                                                    right: 0%;
+                                                                    width: 180px;
+                                                                    display: none;
+                                                                }
+                                                                
+                                                                header ul {
+                                                                    position: relative;
+                                                                    float: right;
+                                                                }
+                                                                
+                                                                header ul li {
+                                                                    float: left;
+                                                                    position: relative;
+                                                                }
+                                                                
+                                                                .navbar-custom .navbar-brand,
+                                                                .navbar-custom .navbar-text {
+                                                                    color: rgb(228, 226, 226);
+                                                                }
+                                                                
+                                                                header * {
+                                                                    color: black;
+                                                                }
+                                                                
+                                                                @font-face {
+                                                                    font-family: 'Impact';
+                                                                }
+                                                                
+                                                                body {
+                                                                    margin: 0;
+                                                                }
+                                                                
+                                                                .imageslide {
+                                                                    display: none;
+                                                                }
+                                                                
+                                                                figure {
+                                                                    margin: 0;
+                                                                }
+                                                                
+                                                                img {
+                                                                    width: 100%;
+                                                                    height: auto;
+                                                                }
+                                                                
+                                                                .prev,
+                                                                .next {
+                                                                    cursor: pointer;
+                                                                    position: absolute;
+                                                                    top: 35%;
+                                                                    width: auto;
+                                                                    padding: 18px;
+                                                                    color: #d2d2d2;
+                                                                    font-size: 60px;
+                                                                    opacity: 0.7;
+                                                                }
+                                                                
+                                                                .next {
+                                                                    right: 4px;
+                                                                }
+                                                                
+                                                                .pulsanti {
+                                                                    width: 100%;
+                                                                    position: absolute;
+                                                                    height: 20px;
+                                                                }
+                                                                
+                                                                .dot {
+                                                                    cursor: pointer;
+                                                                    height: 18px;
+                                                                    width: 18px;
+                                                                    margin: 8px;
+                                                                    background-color: #ccc;
+                                                                    border-radius: 50%;
+                                                                    display: inline-block;
+                                                                }
+                                                                
+                                                                .grigio {
+                                                                    background-color: #1c1818;
+                                                                    opacity: 0.8;
+                                                                }
+                                                                
+                                                                @media (min-width: 768px) and (max-width: 1024px) {
+                                                                    .prev,
+                                                                    .next {
+                                                                        top: 20%;
+                                                                        width: auto;
+                                                                        font-size: 50px;
+                                                                    }
+                                                                }
+                                                                
+                                                                @media (min-width: 481px) and (max-width: 767px) {
+                                                                    .prev,
+                                                                    .next {
+                                                                        top: 10%;
+                                                                        width: auto;
+                                                                        font-size: 40px;
+                                                                    }
+                                                                }
+                                                                
+                                                                @media (max-width: 480px) {
+                                                                    .prev,
+                                                                    .next {
+                                                                        top: 4%;
+                                                                        width: auto;
+                                                                        padding: 6px;
+                                                                        font-size: 40px;
+                                                                    }
+                                                                    .dot {
+                                                                        height: 12px;
+                                                                        width: 12px;
+                                                                        margin: 5px;
+                                                                    }
+                                                                }
+                                                                
+                                                                html,
+                                                                body,
+                                                                #wrap {
+                                                                    height: 100%;
+                                                                }
+                                                                
+                                                                body>#wrap {
+                                                                    height: auto;
+                                                                    min-height: 100%;
+                                                                }
+                                                                
+                                                                #main {
+                                                                    padding-bottom: 150px;
+                                                                }
+                                                                
+                                                                #footer {
+                                                                    position: relative;
+                                                                    margin-top: -150px;
+                                                                    height: 150px;
+                                                                    clear: both;
+                                                                }
+                                                                
+                                                                .site-footer {
+                                                                    background-color: rgb(161, 214, 238);
+                                                                    padding: 40px 0 20px;
+                                                                    font-size: 15px;
+                                                                    line-height: 24px;
+                                                                    color: #737373;
+                                                                }
+                                                                
+                                                                .site-footer hr {
+                                                                    border-top-color: #bbb;
+                                                                    opacity: 0.5
+                                                                }
+                                                                
+                                                                .site-footer hr.small {
+                                                                    margin: 20px 0
+                                                                }
+                                                                
+                                                                .site-footer h6 {
+                                                                    color: black;
+                                                                    font-size: 20px;
+                                                                    text-transform: uppercase;
+                                                                    margin-top: 5px;
+                                                                    letter-spacing: 2px
+                                                                }
+                                                                
+                                                                .site-footer a {
+                                                                    color: black;
+                                                                }
+                                                                
+                                                                .site-footer a:hover {
+                                                                    color: #3366cc;
+                                                                    text-decoration: none;
+                                                                }
+                                                                
+                                                                .footer-links {
+                                                                    padding-left: 0;
+                                                                    list-style: none
+                                                                }
+                                                                
+                                                                .footer-links li {
+                                                                    display: block
+                                                                }
+                                                                
+                                                                .footer-links a {
+                                                                    color: #737373
+                                                                }
+                                                                
+                                                                .footer-links a:active,
+                                                                .footer-links a:focus,
+                                                                .footer-links a:hover {
+                                                                    color: #3366cc;
+                                                                    text-decoration: none;
+                                                                }
+                                                                
+                                                                .footer-links.inline li {
+                                                                    display: inline-block
+                                                                }
+                                                                
+                                                                .site-footer .social-icons {
+                                                                    text-align: right
+                                                                }
+                                                                
+                                                                .site-footer .social-icons a {
+                                                                    width: 40px;
+                                                                    height: 40px;
+                                                                    line-height: 40px;
+                                                                    margin-left: 6px;
+                                                                    margin-right: 0;
+                                                                    border-radius: 100%;
+                                                                    background-color: #33353d
+                                                                }
+                                                                
+                                                                .copyright-text {
+                                                                    margin: 0
+                                                                }
+                                                                
+                                                                @media (max-width:991px) {
+                                                                    .site-footer [class^=col-] {
+                                                                        margin-bottom: 30px
+                                                                    }
+                                                                }
+                                                                
+                                                                @media (max-width:767px) {
+                                                                    .site-footer {
+                                                                        padding-bottom: 0
+                                                                    }
+                                                                    .site-footer .copyright-text,
+                                                                    .site-footer .social-icons {
+                                                                        text-align: center
+                                                                    }
+                                                                }
+                                                                
+                                                                .social-icons {
+                                                                    padding-left: 0;
+                                                                    margin-bottom: 0;
+                                                                    list-style: none
+                                                                }
+                                                                
+                                                                .social-icons li {
+                                                                    display: inline-block;
+                                                                    margin-bottom: 4px
+                                                                }
+                                                                
+                                                                .social-icons li.title {
+                                                                    margin-right: 30px;
+                                                                    text-transform: uppercase;
+                                                                    color: #96a2b2;
+                                                                    font-weight: 700;
+                                                                    font-size: 13px
+                                                                }
+                                                                
+                                                                .social-icons a {
+                                                                    background-color: #eceeef;
+                                                                    color: #818a91;
+                                                                    font-size: 16px;
+                                                                    display: inline-block;
+                                                                    line-height: 44px;
+                                                                    width: 44px;
+                                                                    height: 44px;
+                                                                    text-align: center;
+                                                                    margin-right: 8px;
+                                                                    border-radius: 100%;
+                                                                    -webkit-transition: all .2s linear;
+                                                                    -o-transition: all .2s linear;
+                                                                    transition: all .2s linear
+                                                                }
+                                                                
+                                                                .social-icons a:active,
+                                                                .social-icons a:focus,
+                                                                .social-icons a:hover {
+                                                                    color: #fff;
+                                                                    background-color: #29aafe
+                                                                }
+                                                                
+                                                                .social-icons.size-sm a {
+                                                                    line-height: 34px;
+                                                                    height: 34px;
+                                                                    width: 34px;
+                                                                    font-size: 14px
+                                                                }
+                                                                
+                                                                .social-icons a.facebook:hover {
+                                                                    background-color: #3b5998
+                                                                }
+                                                                
+                                                                .social-icons a.twitter:hover {
+                                                                    background-color: #00aced
+                                                                }
+                                                                
+                                                                .social-icons a.linkedin:hover {
+                                                                    background-color: #007bb6
+                                                                }
+                                                                
+                                                                .social-icons a.dribbble:hover {
+                                                                    background-color: #ea4c89
+                                                                }
+                                                                
+                                                                @media (max-width:767px) {
+                                                                    .social-icons li.title {
+                                                                        display: block;
+                                                                        margin-right: 0;
+                                                                        font-weight: 600
+                                                                    }
+                                                                    * {
+                                                                        box-sizing: border-box
+                                                                    }
+                                                                    @import url('https://fonts.googleapis.com/css?family=Numans');
+                                                                    html,
+                                                                    body {
+                                                                        background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+                                                                        background-size: cover;
+                                                                        background-repeat: no-repeat;
+                                                                        height: 100%;
+                                                                        font-family: 'Numans', sans-serif;
+                                                                    }
+                                                                    .container {
+                                                                        height: 100%;
+                                                                        align-content: center;
+                                                                    }
+                                                                    .card {
+                                                                        height: 370px;
+                                                                        margin-top: auto;
+                                                                        margin-bottom: auto;
+                                                                        width: 400px;
+                                                                        background-color: rgba(0, 0, 0, 0.5) !important;
+                                                                    }
+                                                                    .social_icon span {
+                                                                        font-size: 60px;
+                                                                        margin-left: 10px;
+                                                                        color: #FFC312;
+                                                                    }
+                                                                    .social_icon span:hover {
+                                                                        color: white;
+                                                                        cursor: pointer;
+                                                                    }
+                                                                    .card-header h3 {
+                                                                        color: white;
+                                                                    }
+                                                                    .social_icon {
+                                                                        position: absolute;
+                                                                        right: 20px;
+                                                                        top: -45px;
+                                                                    }
+                                                                    .input-group-prepend span {
+                                                                        width: 50px;
+                                                                        background-color: #FFC312;
+                                                                        color: black;
+                                                                        border: 0 !important;
+                                                                    }
+                                                                    input:focus {
+                                                                        outline: 0 0 0 0 !important;
+                                                                        box-shadow: 0 0 0 0 !important;
+                                                                    }
+                                                                    .remember {
+                                                                        color: white;
+                                                                    }
+                                                                    .remember input {
+                                                                        width: 20px;
+                                                                        height: 20px;
+                                                                        margin-left: 15px;
+                                                                        margin-right: 5px;
+                                                                    }
+                                                                    .login_btn {
+                                                                        color: black;
+                                                                        background-color: #FFC312;
+                                                                        width: 100px;
+                                                                    }
+                                                                    .login_btn:hover {
+                                                                        color: black;
+                                                                        background-color: white;
+                                                                    }
+                                                                    .links {
+                                                                        color: white;
+                                                                    }
+                                                                    .links a {
+                                                                        margin-left: 4px;
+                                                                    }

@@ -1,10 +1,11 @@
 
 <?php
 $passwordUser = $_POST['passwordUser'];
+$adminname=$_POST['username'];
     if (isset($_POST['action'])) {
         switch ($_POST['action']) {
             case 'insert':
-                insert($passwordUser);
+                insert($passwordUser,$username);
                 break;
             case 'select':
                 select();
@@ -17,9 +18,10 @@ $passwordUser = $_POST['passwordUser'];
         exit;
     }
 
-    function insert($passwordUser) {
+    function insert($passwordUser,$username) {
       $pwd = "admin";
-      if($pwd == $passwordUser)
+      $usn="admin"
+      if($pwd == $passwordUser && $usn == $username )
       {
         echo "OK";
       }
