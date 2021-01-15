@@ -24,7 +24,7 @@
                         <div class="col-lg-12">
                             <div class="cuadro_intro_hover " style="background-color:#cccccc;">
                                 <p style="text-align:center; margin-top:20px;">
-                                    <img src="io.jpg" class="img-responsive" alt="">
+                                    <img src="./img/io.jpg" class="img-responsive" alt="">
                                 </p>
                                 <div class="caption">
                                     <div class="blur"></div>

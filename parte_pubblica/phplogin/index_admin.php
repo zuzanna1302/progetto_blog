@@ -25,7 +25,7 @@
                       <a class="navbar-brand" rel="home" href="#" title="The blond caramel">
                           <img style="max-width:200px; margin-top: -70px;" src="logo.png">
 
-    <li><a href="../logout.php"><span class="fas fa-sign-out-alt"></span> Logout</a></li>
+    <li><a href="../phplogin/logout.php"><span class="fas fa-sign-out-alt"></span> Logout</a></li>
               </div>
           </div>
             </nav>
@@ -36,10 +36,11 @@
   <div class="container my-5">
          <div class="card-body text-center">
       <h4 class="card-title">ADMIN DASHBORD</h4>
-      <p class="card-text">Qui l'admin ha la possibilita di creare, moddificare e eliminare i post</p>
+      <p class="card-text">Qui l'admin ha la possibilita di creare nuovi post</p>
     </div>
       <div class="card">
-          <button id="add__new__art" type="button" class="btn btn-success position-absolute" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i> Aggiungi Post</button>
+          <button id="add__new__art" type="button" class="btn btn-success position-absolut" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i> Aggiungi Post</button>
+          
           <table class="table table-hover" style="white">
               <thead>
                 <tr>
