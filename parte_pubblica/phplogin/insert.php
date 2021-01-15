@@ -2,7 +2,7 @@
  $DATABASE_HOST = 'localhost';
  $DATABASE_USER = 'root';
  $DATABASE_PASS = '@password123';
- $DATABASE_NAME = 'blog';
+ $DATABASE_NAME = 'complete-blog-php';
 
  // Create connection
 
@@ -13,20 +13,26 @@
  if (!$conn) {
        die("Connection failed: " . mysqli_connect_error());
  }
-$titolo = $_POST['titolo'];
-$contenuto = $_POST['contenuto'];
-$autore = $_POST['Autore'];
-$data = $_POST['Data'];
+$titolo = $_POST['title'];
+$slug = $_POST['slug'];
+$image = $_POST['image'];
+$body = $_POST['body'];
+$published = $_POST['published'];
+$created_at = $_POST['created_at'];
+
  echo "Connected successfully";
  echo $titolo;
- echo $contenuto;
- echo $autore;
- echo $data;
+ echo $slug;
+ echo $image;
+ echo $body ;
+ echo $published ;
+ echo $created_at;
+ 
 
 
 
 
-$sql = "INSERT INTO post (titolo, contenuto, Autore, Data) VALUES ('". $titolo ."', '".$contenuto."','". $autore."', '".$data."')";
+$sql = "INSERT INTO posts (title, slug, image , body, published, created_at) VALUES ('". $titolo ."', '".$slug."','". $image."', '".$body."','".$published."','".$created_at."')";
  if (mysqli_query($conn, $sql)) {
    //    echo "New record created successfully";
 } else {

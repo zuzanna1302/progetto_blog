@@ -13,13 +13,34 @@
             <div class="col-lg-8">
 
                 <!-- the actual blog post: title/author/date/content -->
-                <h1><a href="">Benvenuti sul mio blog </a></h1>
+                <h1><a href="">The Blond Caramel</a></h1>
                 <p class="lead"><i class="fa fa-user"></i> by <a href="">Zuzanna Kacka</a>
                 </p>
                
-            
+                <div class="well">
+                    <h4><i class="fa fa-book"></i> Questa sono io:</h4>
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                <p style="text-align:center; margin-top:20px;">
+                                    <img src="io.jpg" class="img-responsive" alt="">
+                                </p>
+                                <div class="caption">
+                                    <div class="blur"></div>
+                                    <div class="caption-text">
+                                        <h3>Questa sono io benvenuti nel mio blog</h3>
+                                        <p>Loren ipsum dolor si amet ipsum dolor si amet ipsum dolor...</p </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
                 <!-- /well -->
-                
+                <h2>Ecco i post più recenti:</h2>
 
                 <?php foreach ($posts as $post): ?>
 	<div class="post" style="margin-left: 0px;">
@@ -79,7 +100,6 @@
 
                 <div class="g-plusone" data-annotation="inline" data-width="300" data-href=""></div>
 
-                <!-- Helyezd el ezt a címkét az utolsó +1 gomb címke mögé. -->
                 <script type="text/javascript">
                     (function() {
                         var po = document.createElement('script');
@@ -112,49 +132,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- /well -->
-                <!-- /well -->
-                <!-- /well -->
-                <div class="well">
-                    <h4><i class="fa fa-fire"></i> Popular Posts:</h4>
-                    <ul>
-                        <li><a href="">lorem ipsum </a></li>
-                        <li><a href="">How to create responsive website with Bootstrap?</a></li>
-                        <li><a href="">The best Joomla! templates 2014</a></li>
-                        <li><a href="">ASP .NET cms list</a></li>
-                        <li><a href="">C# Hello, World! program</a></li>
-                        <li><a href="">Java random generator</a></li>
-                    </ul>
-                </div>
-                <!-- /well -->
-
-                <!-- /well -->
-                <div class="well">
-                    <h4><i class="fa fa-book"></i> Featured post:</h4>
-                    <div class="row">
-
-                        <div class="col-lg-12">
-                            <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-                                <p style="text-align:center; margin-top:20px;">
-                                    <img src="food.jpg" class="img-responsive" alt="">
-                                </p>
-                                <div class="caption">
-                                    <div class="blur"></div>
-                                    <div class="caption-text">
-                                        <h3>FOOD</h3>
-                                        <p>Loren ipsum dolor si amet ipsum dolor si amet ipsum dolor...</p </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <!-- /well -->
-
-
-     </div>
      </div>
               
       

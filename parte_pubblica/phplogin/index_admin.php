@@ -43,49 +43,58 @@
           <table class="table table-hover" style="white">
               <thead>
                 <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">titolo</th>
-                  <th scope="col">contenuto</th>
-                  <th scope="col">autore </th>
-                  <th scope="col">data</th>
+                  <th scope="col">titolo </th>
+                  <th scope="col">anteprima</th>
+                  <th scope="col">immagine</th>
+                  <th scope="col">corpo </th>
+                  <th scope="col">pubblicato si o no?</th>
+                  <th scope="col">creato il:</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>beauty trcks</td>
-                  <td>lorem ipsummmmmmmmm</td>
-                    <td>laura</td>
-                      <td>29/11/2020</td>
-                  <td>
-                      <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
-                      <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
-                  </td>
-                  <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>beauty trcks</td>
-                  <td>lorem ipsummmmmmmmm</td>
-                    <td>laura</td>
-                      <td>29/11/2020</td>
-                  <td>
-                      <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
-                      <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
-                  </td>
-                  <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>beauty trcks</td>
-                    <td>lorem ipsummmmmmmmm</td>
-                      <td>laura</td>
-                        <td>29/11/2020</td>
-                    <td>
-                        <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
-                        <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
-                    </td>
-                    <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
-                  </tr>
+                <?php
+$DATABASE_HOST = 'localhost';
+$DATABASE_USER = 'root';
+$DATABASE_PASS = '@password123';
+$DATABASE_NAME = 'complete-blog-php';
+
+// Create connection
+
+$conn = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+} 
+
+  $sql = "SELECT * FROM `posts` ";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+   
+    while($row = $result->fetch_assoc()) {
+      echo "<tr>";
+      echo "<td class=\"#\">" . $row["title"] . "</td>";
+      echo "<td class=\"#\">" . $row["slug"] . "</td>";
+      echo "<td class=\"#\">" . $row["image"] . "</td>";
+      echo "<td class=\"#\">" . $row["body"] . "</td>";
+      echo "<td class=\"#\">" . $row["published"] . "</td>";
+      echo "<td class=\"#\">" . $row["created_at"] . "</td>";
+      echo "<td class=\"#\">" . $row["update_at"] . "</td>";
+      //echo "<td class=\"btn btn-sm btn-danger href=\"> Elimina</td>";
+      echo "</tr>";
+    }
+  } else {
+    echo "0 results";
+  }
+
+
+
+
+
+  $conn->close();
+  ?>
               </tbody>
             </table>
       </div>
@@ -100,23 +109,35 @@
               <form>
                 <div class="input-group">
                   <label for="listname">Titolo</label>
-                  <input type="text" class="form-control" name="titolo" id="listname" placeholder="Inserisci il titolo">
+                  <input type="text" class="form-control" name="title" id="listname" placeholder="Inserisci il titolo">
                 </div>
                 <div class="input-group">
-                  <label for="datepicker">Contenuto</label>
-                  <input  type="text" class="form-control" name="contenuto" id="datepicker" placeholder="Inserisci il contenuto">
+                  <label for="datepicker">anteprima</label>
+                  <input  type="text" class="form-control" name="slug" id="datepicker" placeholder="Inserisci l'anteprima">
                 </div>
                 <div class="input-group">
-                                        <label for="datepicker">Autore</label>
+                                        <label for="datepicker">immagine</label>
                     <div class="input-group">
 
-                      <input type="text" class="form-control" name="Autore" placeholder="Inserisci l'autore">
+                      <input type="text" class="form-control" name="image" placeholder="Inserisci l'immagine">
                     </div>
                     <div class="input-group">
-                                            <label for="datepicker">Data</label>
+                                            <label for="datepicker">Contenuto</label>
                         <div class="input-group">
 
-                          <input type="text" class="form-control" name="Data" placeholder="Inserisci la data">
+                          <input type="text" class="form-control" name="body" placeholder="Inserisci il contenuto">
+                        </div>
+                        <div class="input-group">
+                                            <label for="datepicker">Pubblicato si no?</label>
+                        <div class="input-group">
+
+                          <input type="text" class="form-control" name="published" placeholder="se vuoi che sia pubblicato metti 1 altrimenti metti 0">
+                        </div>
+                        <div class="input-group">
+                                            <label for="datepicker">Creato il:</label>
+                        <div class="input-group">
+
+                          <input type="text" class="form-control" name="created_at" placeholder="Inserisci la data y:m:g 00:00:00 ">
                         </div>
                   </div>
                <div class="form-group text-center">
