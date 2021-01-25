@@ -84,5 +84,4 @@ function getAllTopics()
 	$topics = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	return $topics;
 }
-// more functions to come here ...
 ?>
